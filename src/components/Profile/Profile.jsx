@@ -21,7 +21,7 @@ export default function Profile({ name, setLoggedIn }) {
   }
   return (
     <section className="profile page__profile">
-      <h1 className='profile__title'>{`Привет, Виталий!`}</h1>
+      <h1 className = 'profile__title'>{`Привет, Виталий!`}</h1>
       <Form
         name={name}
         isValid={isValid}
@@ -29,10 +29,12 @@ export default function Profile({ name, setLoggedIn }) {
       >
         <Input
           selectname={name}
-          name='username'
-          type='text'
-          title='Имя'
-          minLength='3'
+          name = 'username'
+          type = 'text'
+          title = 'Имя'
+          placeholder = 'Введите имя'
+          minLength = '3'
+          maxLength = '20'
           value={values.username}
           isInputValid={isInputValid.username}
           error={errors.username}
@@ -40,16 +42,19 @@ export default function Profile({ name, setLoggedIn }) {
         />
         <Input
           selectname={name}
-          name='email'
-          type='email'
-          title='E-mail'
+          name = 'email'
+          type = 'email'
+          title = 'E-mail'
+          placeholder = 'Введите e-mail'
+          minLength = '3'
+          maxLength = '30'
           value={values.email}
           isInputValid={isInputValid.email}
           error={errors.email}
           onChange={handleChange}
         />
       </Form>
-      <Link to={'/'} onClick={outLogin} className='profile__link'>Выйти из аккаунта</Link>
+      <Link to={'/'} onClick={outLogin} className = 'profile__link'>Выйти из аккаунта</Link>
     </section>
   )
 }

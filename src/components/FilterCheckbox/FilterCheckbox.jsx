@@ -2,8 +2,8 @@ import './FilterCheckbox.css'
 
 export default function FilterCheckbox({ isCheck, changeShot }) {
   return (
-    <label className='search__label-container'>
-      <div className='search__input-container'>
+    <div className='search__label-container'>
+      <label className='search__input-container'>
         <input type="checkbox" className='search__ckeck' onChange={changeShot} />
         <svg className='search__check-svg' width="36" height="20" viewBox="0 0 36 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="smalltumb">
@@ -17,8 +17,8 @@ export default function FilterCheckbox({ isCheck, changeShot }) {
             />
           </g>
         </svg>
-      </div>
+      </label>
       <span className='search__check-text'>Короткометражки</span>
-    </label>
+    </div>
   )
 }
