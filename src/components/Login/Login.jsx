@@ -17,21 +17,24 @@ export default function Login({ name, setLoggedIn }) {
   return (
     <SectionLogin name={name} isValid={isValid} onSubmit={onLogin}>
       <Input
-        name='email'
-        type='email'
-        title='E-mail'
-        placeholder='Электронная почта'
+        name = 'email'
+        type = 'email'
+        title = 'E-mail'
+        placeholder = 'Электронная почта'
+        minLength = '3'
+        maxLength = '30'
         value={values.email}
         isInputValid={isInputValid.email}
         error={errors.email}
         onChange={handleChange}
       />
       <Input
-        name='password'
-        type='password'
-        title='Пароль'
-        placeholder='Пароль'
+        name = 'password'
+        type = 'password'
+        title = 'Пароль'
+        placeholder = 'Пароль'
         minLength = '3'
+        maxLength = '30'
         value={values.password}
         isInputValid={isInputValid.password}
         error={errors.password}

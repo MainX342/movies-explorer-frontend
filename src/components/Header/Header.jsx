@@ -31,7 +31,7 @@ export default function Header({ name, loggedIn }) {
   }
 
   return (
-    <header className={`header${name === 'home' ? ' page__header_unauthorized' : ' page__header_authorized'}`}>
+    <header className={`header${name === 'home' ? ' header_unauthorized' : ' header_authorized'}`}>
       <div>
         <Link to={'/'} className="header__logo"></Link>
       </div>
