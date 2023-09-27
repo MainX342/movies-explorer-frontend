@@ -1,5 +1,4 @@
-// const BASE_URL = 'http://api.diploma-mainx.nomoredomainsicu.ru';
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://api.diploma-mainx.nomoredomainsicu.ru';
 
 function getResponseData(res) {
   return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`);
