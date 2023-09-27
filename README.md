@@ -15,7 +15,10 @@
 https://www.figma.com/file/6FMWkB94wE7KTkcCgUXtnC/light-1?type=design&node-id=1-7266&mode=dev (Dark-2)
 
 ## Backend
-api.diploma-mainx.nomoredomainsicu.ru
+https://api.diploma-mainx.nomoredomainsicu.ru
 
 ## Frontend
-diploma-mainx.nomoredomainsicu.ru
+https://diploma-mainx.nomoredomainsicu.ru
+
+## Пул реквест
+https://github.com/MainX342/movies-explorer-frontend/pull/3

@@ -1,14 +1,16 @@
-const BASE_URL = 'http://api.diploma-mainx.nomoredomainsicu.ru';
+const BASE_URL = "https://api.diploma-mainx.nomoredomainsicu.ru";
 
 function getResponseData(res) {
-  return res.ok ? res.json() : Promise.reject(`${res.status} ${res.statusText}`);
+  return res.ok
+    ? res.json()
+    : Promise.reject(`${res.status} ${res.statusText}`);
 }
 
-async function request(url, method = 'GET', body = null, token = null) {
+async function request(url, method = "GET", body = null, token = null) {
   const options = {
     method: method,
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
 
@@ -25,23 +27,23 @@ async function request(url, method = 'GET', body = null, token = null) {
 }
 
 export async function registration(username, email, password) {
-  return request('/signup', 'POST', { name: username, email, password });
+  return request("/signup", "POST", { name: username, email, password });
 }
 
 export async function authorization(email, password) {
-  return request('/signin', 'POST', { email, password });
+  return request("/signin", "POST", { email, password });
 }
 
 export async function getUserData(token) {
-  return request('/users/me', 'GET', null, token);
+  return request("/users/me", "GET", null, token);
 }
 
 export async function updateUserInfo(username, email, token) {
-  return request('/users/me', 'PATCH', { name: username, email }, token);
+  return request("/users/me", "PATCH", { name: username, email }, token);
 }
 
 export async function getMovies(token) {
-  return request('/movies', 'GET', null, token);
+  return request("/movies", "GET", null, token);
 }
 
 export async function addMovie(data, token) {
@@ -59,9 +61,9 @@ export async function addMovie(data, token) {
     nameEN: data.nameEN,
   };
 
-  return request('/movies', 'POST', body, token);
+  return request("/movies", "POST", body, token);
 }
 
 export async function deleteMovie(movieId, token) {
-  return request(`/movies/${movieId}`, 'DELETE', null, token);
+  return request(`/movies/${movieId}`, "DELETE", null, token);
 }
