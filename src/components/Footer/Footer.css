@@ -74,7 +74,7 @@
   }
 }
 
-.footte__link {
+.footer__link {
   margin-right: 20px;
   text-decoration: none;
   font-size: 13px;
@@ -85,24 +85,24 @@
 }
 
 @media screen and (max-width: 767px) {
-  .footte__link {
+  .footer__link {
     font-size: 12px;
     margin: 0 0 12px;
   }
 }
 
-.footte__link:last-of-type {
+.footer__link:last-of-type {
   margin-right: 0;
 }
 
 @media screen and (max-width: 767px) {
-  .footte__link:last-of-type {
+  .footer__link:last-of-type {
     margin-bottom: 30px;
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .footte__link:hover {
+  .footer__link:hover {
     opacity: .7;
     cursor: pointer;
   }

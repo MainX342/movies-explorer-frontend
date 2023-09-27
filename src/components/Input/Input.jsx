@@ -1,6 +1,6 @@
 import './Input.css'
 
-export default function Input({ selectname, name, placeholder, type, title, minLength, value, isInputValid, error, onChange }) {
+export default function Input({ selectname, name, placeholder, type, title, minLength, maxLength, value, isInputValid, error, onChange }) {
 
   return (
     <>
@@ -12,7 +12,8 @@ export default function Input({ selectname, name, placeholder, type, title, minL
             type={type}
             name={name}
             placeholder={placeholder}
-            minLength={minLength || ''}
+            minLength={minLength}
+            maxLength={maxLength}
             className={`login__input${isInputValid === undefined || isInputValid ? '' : ' login__input_invaid'}`}
             value={value || ''}
             onChange={onChange}
@@ -29,7 +30,8 @@ export default function Input({ selectname, name, placeholder, type, title, minL
             type={type}
             name={name}
             placeholder={placeholder}
-            minLength={minLength || ''}
+            minLength={minLength}
+            maxLength={maxLength}
             className={`profile__input${isInputValid === undefined || isInputValid ? '' : ' profile__input_invaid'}`}
             value={value || ''}
             onChange={onChange}

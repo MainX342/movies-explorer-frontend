@@ -1,41 +1,47 @@
 import Input from "../Input/Input";
 import SectionLogin from "../SectionLogin/SectionLogin";
 import useFormValidation from '../../hooks/useFormValidation'
-import { useNavigate } from "react-router-dom";
 
 
-export default function Login({ name, setLoggedIn }) {
-  const navigate = useNavigate()
+export default function Login({ name, onLogin, setIsError }) {
   const { values, errors, isInputValid, isValid, handleChange, } = useFormValidation()
 
-  function onLogin(evt) {
+  function onSubmit(evt) {
     evt.preventDefault()
-    navigate('/movies')
-    setLoggedIn(true)
+    onLogin(values.email, values.password)
   }
 
   return (
-    <SectionLogin name={name} isValid={isValid} onSubmit={onLogin}>
+    <SectionLogin name={name} isValid={isValid} setIsError={setIsError} onSubmit={onSubmit}>
       <Input
-        name='email'
-        type='email'
-        title='E-mail'
-        placeholder='Электронная почта'
+        name = 'email'
+        type = 'email'
+        title = 'E-mail'
+        placeholder = 'Электронная почта'
+        minLength = '3'
+        maxLength = '30'
         value={values.email}
         isInputValid={isInputValid.email}
         error={errors.email}
-        onChange={handleChange}
+        onChange={(evt) => {
+          handleChange(evt)
+          setIsError(false)
+        }}
       />
       <Input
-        name='password'
-        type='password'
-        title='Пароль'
-        placeholder='Пароль'
+        name = 'password'
+        type = 'password'
+        title = 'Пароль'
+        placeholder = 'Пароль'
         minLength = '3'
+        maxLength = '30'
         value={values.password}
         isInputValid={isInputValid.password}
         error={errors.password}
-        onChange={handleChange}
+        onChange={(evt) => {
+          handleChange(evt)
+          setIsError(false)
+        }}
       />
     </SectionLogin>
   )

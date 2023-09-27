@@ -21,6 +21,10 @@
   position: relative;
 }
 
+.search__label-container_disabled {
+  pointer-events: none;
+}
+
 .search__check-text {
   margin-left: 12px;
   font-size: 12px;
@@ -37,7 +41,7 @@
   }
 }
 
-.search__ckeck {
+.search__check {
   visibility: hidden;
   width: 36px;
   height: 20px;

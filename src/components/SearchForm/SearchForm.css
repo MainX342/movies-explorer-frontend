@@ -90,6 +90,11 @@
   transition: opacity .3s linear;
 }
 
+.search__submit_disabled {
+  background-image: url(../../images/search-disabled.svg);
+  pointer-events: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .search__submit:hover {
     opacity: .7;

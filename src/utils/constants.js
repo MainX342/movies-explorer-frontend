@@ -1,161 +1,21 @@
-import img from '../images/film.png'
-export const movies = [
-  {
-    id: 1,
-    name: '33 слова о дизайне',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 2,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 3,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 4,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 5,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 6,
-    name: 'Короткометражка один',
-    image: img,
-    duration: 19,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 7,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 8,
-    name: 'Короткометражка два',
-    image: img,
-    duration: 15,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 9,
-    name: 'Тестовый фильм',
-    image: img,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 10,
-    name: 'Тестовый фильм',
-    image: img,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 11,
-    name: 'Тестовый фильм',
-    image: img,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 12,
-    name: 'Тестовый фильм',
-    image: img,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 13,
-    name: 'Тестовый фильм',
-    image: img,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 14,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 15,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 16,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 17,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 18,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 19,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 20,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-]
+const EmailRegex = "^\\S+@\\S+\\.\\S+$"
+const MediumScreen = 1024
+const SmallScreen = 480
+const InitLargeScreen = 12
+const InitMediumScreen = 8
+const InitSmallScreen = 5
+const StepLargeScreen = 4
+const StepMediumScreen = 3
+const StepSmallScreen = 2
 
-export const savedMovies = [
-  {
-    id: 1,
-    name: 'Тестовый фильм',
-    image: img,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 2,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-  {
-    id: 3,
-    name: 'Тестовый фильм',
-    image: img,
-    duration: 69,
-    trailerLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  },
-]
+export {
+  EmailRegex,
+  MediumScreen,
+  SmallScreen,
+  InitLargeScreen,
+  InitMediumScreen,
+  InitSmallScreen,
+  StepLargeScreen,
+  StepMediumScreen,
+  StepSmallScreen
+}

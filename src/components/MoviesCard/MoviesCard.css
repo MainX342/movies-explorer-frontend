@@ -93,8 +93,13 @@
 }
 
 .gallery__save_delete {
+  visibility: hidden;
   width: 21px;
   background-image: url(../../images/delete.svg);
+}
+
+.gallery__card-movie:hover .gallery__save_delete {
+  visibility: visible;
 }
 
 @media (hover: hover) and (pointer: fine) {

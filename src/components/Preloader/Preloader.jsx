@@ -1,13 +1,9 @@
 import './Preloader.css'
 
-const Preloader = ({name}) => {
+const Preloader = () => {
     return (
-        <div className={`preloader ${name === 'button' ? 'preloader_type_button' : ''}`}>
-            <div className={`preloader__container ${name === 'button' ? 'preloader__container_type_button' : ''}`}>
-                <span className={`preloader__round ${name === 'button' ? 'preloader__round_type_button' : ''}`}></span>
-            </div>
-        </div>
-    )
+        <div className="lds-dual-ring"></div>
+    );
 };
 
 export default Preloader

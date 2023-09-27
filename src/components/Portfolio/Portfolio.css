@@ -40,7 +40,7 @@
   padding: 0;
 }
 
-.portfolio_item {
+.portfolio__item {
   margin-bottom: 20px;
 }
 
@@ -50,7 +50,7 @@
   }
 }
 
-.portfolio_item:last-child {
+.portfolio__item:last-child {
   margin-bottom: 0;
 }
 

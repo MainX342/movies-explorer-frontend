@@ -74,3 +74,8 @@
     cursor: pointer;
   }
 }
+
+.gallery__serch-error {
+  text-align: center;
+  color: var(--secondary-font-color);
+}
