@@ -3,6 +3,15 @@ import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
 import { useEffect, useState } from "react";
 import Preloader from "../Preloader/Preloader";
+import {
+  MediumScreen,
+  SmallScreen,
+  InitLargeScreen,
+  InitMediumScreen,
+  InitSmallScreen,
+  StepLargeScreen,
+  StepSmallScreen,
+} from "../../utils/constants";
 
 export default function MoviesCardList({
   movies,
@@ -18,14 +27,14 @@ export default function MoviesCardList({
   const count = movies.slice(0, visibleMovies);
 
   function showMovies() {
-    const counter = { init: 12, step: 3 };
-    if (window.innerWidth <= 768) {
-      counter.init = 8;
-      counter.step = 2;
+    const counter = { init: InitLargeScreen, step: StepLargeScreen };
+    if (window.innerWidth <= MediumScreen) {
+      counter.init = InitMediumScreen;
+      counter.step = StepSmallScreen;
     }
-    if (window.innerWidth <= 320) {
-      counter.init = 5;
-      counter.step = 2;
+    if (window.innerWidth <= SmallScreen) {
+      counter.init = InitSmallScreen;
+      counter.step = StepSmallScreen;
     }
     return counter;
   }
@@ -35,13 +44,13 @@ export default function MoviesCardList({
       setVisibleMovies(showMovies().init);
       function showMoviesForResize() {
         setTimeout(() => {
-          if (window.innerWidth > 768) {
+          if (window.innerWidth > MediumScreen) {
             setVisibleMovies(showMovies().init);
           }
-          if (window.innerWidth <= 768) {
+          if (window.innerWidth <= MediumScreen) {
             setVisibleMovies(showMovies().init);
           }
-          if (window.innerWidth <= 320) {
+          if (window.innerWidth <= SmallScreen) {
             setVisibleMovies(showMovies().init);
           }
         }, 500);

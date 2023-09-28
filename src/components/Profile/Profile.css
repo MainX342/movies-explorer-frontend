@@ -62,3 +62,7 @@
     opacity: .7;
   }
 }
+
+.profile__link_disabled {
+  pointer-events: none;
+}

@@ -65,7 +65,7 @@
   }
 }
 
-.profile__error-request {
+.profile__message {
   visibility: hidden;
   display: block;
   margin: 174px 0 0 0;
@@ -78,19 +78,24 @@
 }
 
 @media screen and (max-width: 768px) {
-  .profile__error-request {
+  .profile__message {
     margin-top: 164px;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .profile__error-request {
+  .profile__message {
     margin-top: 333px;
   }
 }
 
-.profile__error-request_active {
+.profile__message_active {
   visibility: visible;
+}
+
+.profile__message_success {
+  visibility: visible;
+  color: var(--color-accent-colorful);
 }
 
 .profile__submit {
@@ -118,4 +123,9 @@
   .profile__submit:hover {
     opacity: .7;
   }
+}
+
+.profile__submit_disabled {
+  color: #C2C2C2;
+  pointer-events: none;
 }

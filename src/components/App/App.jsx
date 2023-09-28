@@ -23,7 +23,7 @@ import Footer from "../Footer/Footer";
 function App() {
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
-  const [isSend, setIsSend] = useState(false);
+  const [isSending, setisSending] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [savedMovies, setSavedMovies] = useState([]);
   const [isError, setIsError] = useState(false);
@@ -66,7 +66,9 @@ function App() {
 
   function handleToggleMovie(data) {
     const isAdd = savedMovies.some((element) => data.id === element.movieId);
-    const searchClickMovie = savedMovies.filter((movie) => movie.movieId === data.id);
+    const searchClickMovie = savedMovies.filter(
+      (movie) => movie.movieId === data.id
+    );
 
     if (isAdd) {
       handleDeleteMovie(searchClickMovie[0]._id);
@@ -80,7 +82,26 @@ function App() {
   }
 
   function handleLogin(email, password) {
-    setIsSend(true);
+    setisSending(true);
+    authorizeAndNavigate(email, password);
+  }
+
+  function handleRegister(username, email, password) {
+    setisSending(true);
+    registration(username, email, password)
+      .then((res) => {
+        if (res) {
+          authorizeAndNavigate(email, password);
+        }
+      })
+      .catch((err) => {
+        setIsError(true);
+        console.error(`Ошибка при регистрации ${err}`);
+      })
+      .finally(() => setisSending(false));
+  }
+
+  function authorizeAndNavigate(email, password) {
     authorization(email, password)
       .then((res) => {
         localStorage.setItem("jwt", res.token);
@@ -92,34 +113,7 @@ function App() {
         setIsError(true);
         console.error(`Ошибка при авторизации ${err}`);
       })
-      .finally(() => setIsSend(false));
-  }
-
-  function handleRegister(username, email, password) {
-    setIsSend(true);
-    registration(username, email, password)
-      .then((res) => {
-        if (res) {
-          setLoggedIn(false);
-          authorization(email, password)
-            .then((res) => {
-              localStorage.setItem("jwt", res.token);
-              setLoggedIn(true);
-              navigate("/movies");
-              window.scrollTo(0, 0);
-            })
-            .catch((err) => {
-              setIsError(true);
-              console.error(`Ошибка при авторизации после регистрации ${err}`);
-            })
-            .finally(() => setIsSend(false));
-        }
-      })
-      .catch((err) => {
-        setIsError(true);
-        console.error(`Ошибка при регистрации ${err}`);
-      })
-      .finally(() => setIsSend(false));
+      .finally(() => setisSending(false));
   }
 
   function onLogOut() {
@@ -129,7 +123,7 @@ function App() {
   }
 
   function updateUser(username, email) {
-    setIsSend(true);
+    setisSending(true);
     updateUserInfo(username, email, localStorage.jwt)
       .then((res) => {
         setCurrentUser(res);
@@ -140,7 +134,7 @@ function App() {
         setIsError(true);
         console.error(`Ошибка при редактировании данных ${err}`);
       })
-      .finally(() => setIsSend(false));
+      .finally(() => setisSending(false));
   }
 
   return (
@@ -149,7 +143,7 @@ function App() {
         <Preloader />
       ) : (
         <CurrentUserContext.Provider value={currentUser}>
-          <SendContext.Provider value={isSend}>
+          <SendContext.Provider value={isSending}>
             <ErrorContext.Provider value={isError}>
               <Routes>
                 <Route
